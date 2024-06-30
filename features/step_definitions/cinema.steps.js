@@ -82,17 +82,17 @@ Then("получает результат брони 3-х мест", async funct
   expect(Title).equal("Вы выбрали билеты:");
 });
 
-When("переходит на расписание завтра", async function () {
+When("переходит на расписание на завтра", async function () {
   return await clickElement(this.page, "nav > a:nth-child(2)");
 });
 
 When("выбирает время сеанса на Сталкер(1979) на 13-00", async function () {
-  return await clickElement(this.page, "body > main > section:nth-child(1) > div.movie-seances__hall > ul > li:nth-child(1) > a");
+  return await clickElement(this.page, "body > main > section:nth-child(2) > div.movie-seances__hall > ul > li:nth-child(1) > a");
 });
 
-When("выбирает место в зале кинотеатра 6 ряд 3 место", async function () {
+When("выбирает место в зале кинотеатра 6 ряд 2 место", async function () {
   await this.page.waitForSelector("div.buying-scheme");
-  place = ".buying-scheme__wrapper > :nth-child(6) > :nth-child(3)";
+  place = ".buying-scheme__wrapper > :nth-child(6) > :nth-child(2)";
   await clickElement(this.page, place); 
   await clickElement(this.page, "button.acceptin-button");
 });
