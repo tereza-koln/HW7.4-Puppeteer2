@@ -30,7 +30,7 @@ After(async function () {
 
 Given("пользователь на странице {string}", async function (url) {
   try {
-    await this.page.goto(url, { setTimeout: 5000 });
+    await this.page.goto(url, { setTimeout: 50000 });
   } catch (error) {
     throw new Error(`Failed to navigate to ${url} with error: ${error}`);
   }
@@ -82,12 +82,12 @@ Then("получает результат брони 3-х мест", async funct
   expect(Title).equal("Вы выбрали билеты:");
 });
 
-When("переходит на расписание на завтра", async function () {
+When("переходит на расписание завтра", async function () {
   return await clickElement(this.page, "nav > a:nth-child(2)");
 });
 
-When("выбирает время сеанса на Сталкер(1979) на 13-00", async function () {
-  return await clickElement(this.page, "body > main > section:nth-child(2) > div.movie-seances__hall > ul > li:nth-child(1) > a");
+When("выбирает время сеанса на Сталкер1979", async function () {
+  return await clickElement(this.page, "body > main > section:nth-child(1) > div.movie-seances__hall > ul > li:nth-child(1) > a");
 });
 
 When("выбирает место в зале кинотеатра 6 ряд 2 место", async function () {

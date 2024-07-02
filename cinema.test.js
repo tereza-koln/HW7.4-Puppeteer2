@@ -5,7 +5,7 @@ let page;
 
 beforeEach(async () => {
   page = await browser.newPage();
-  await page.setDefaultNavigationTimeout(0);
+  await page.setDefaultNavigationTimeout(60000);
 });
 
 afterEach(() => {
@@ -45,7 +45,7 @@ describe("Сinema tests", () => {
     expect(Title).toEqual("Вы выбрали билеты:");    
     }, 60000);
 
-  test("Попытка купить занятые места на Сталкер(1979) на завтра", async () => {
+  test("Попытка купить занятые места на Сталкер1979 на завтра", async () => {
     await clickElement(page, "nav > a:nth-child(2)");
     await clickElement(page, "body > main > section:nth-child(1) > div.movie-seances__hall > ul > li:nth-child(1) > a");
     await page.waitForSelector("div.buying-scheme");
